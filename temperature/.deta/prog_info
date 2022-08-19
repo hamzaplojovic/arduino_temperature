@@ -1,1 +1,0 @@
-{"id":"373f56a8-3ed4-413e-b1eb-507ecb907040","space":26161,"runtime":"python3.9","name":"temperature","path":"lrlegx","project":"a09rrrza","account":"144798365827","region":"eu-central-1","deps":["deta","fastapi"],"envs":null,"public":true,"log_level":"off","cron":""}
