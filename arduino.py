@@ -1,10 +1,14 @@
 import serial
 import time
+import httpx
 
-ser = serial.Serial('COM6', 9600)
+ser = serial.Serial('/dev/cu.usbmodem11201', 9600)
 time.sleep(1)
 
-for i in range(100):
+while True:
     line = ser.readline().decode("utf-8")
-    if len(line) > 0:
-        print(line)
+    if len(line.strip()) > 0:
+        httpx.get(
+            f"https://lrlegx.deta.dev/temperature/?new={line.strip()[41:-1]}")
+        httpx.get(
+            f"https://lrlegx.deta.dev/humidity/?new={line.strip()[19:24]}")
