@@ -9,6 +9,6 @@ while True:
     line = ser.readline().decode("utf-8")
     if len(line.strip()) > 0:
         httpx.get(
-            f"https://lrlegx.deta.dev/temperature/add?new={str(line.strip()[41:-1])}")
+            f"https://lrlegx.deta.dev/temperature/add?new={str(line.strip()[39:-1])}")
         httpx.get(
             f"https://lrlegx.deta.dev/humidity/add?new={line.strip()[19:24]}")
